@@ -5,7 +5,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-  "Vegan Breakface Recipes"
+  "Vegan Breakfast Recipes"
+  erb :index
   end
 
   get '/recipes/new' do
@@ -33,7 +34,7 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/recipes/:id' do
-  @recipes2 = Article.find(params[:id])
+  @recipes2 = Recipe.find(params[:id])
   @recipes2.name = params[:name]
   @recipes2.ingredients = params[:ingredients]
   @recipes2.cook_time = params[:cook_time]
